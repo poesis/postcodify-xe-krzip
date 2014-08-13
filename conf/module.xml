@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants />
+    <permissions />
+    <actions>
+        <action name="dispKrzipAdminConfig" type="view" admin_index="true" menu_name="krzip" />
+        <action name="procKrzipAdminInsertConfig" type="controller" ruleset="configKrzip" />
+    </actions>
+    <menus>
+        <menu name="krzip" type="all">
+            <title xml:lang="ko">Postcodify 새주소 우편번호 검색</title>
+            <title xml:lang="en">Postcodify Korean Postal Code Search</title>
+            <title xml:lang="jp">Postcodify 韓国郵便番号検索</title>
+            <title xml:lang="zh-CN">Postcodify 韩国邮编搜索</title>
+        </menu>
+    </menus>
+</module>

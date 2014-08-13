@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+    <item name="krzip">
+        <value xml:lang="ko"><![CDATA[Postcodify 새주소 우편번호 검색]]></value>
+    </item>
+    <item name="krzip_server_url">
+        <value xml:lang="ko"><![CDATA[검색 서버 주소]]></value>
+    </item>
+</lang>
