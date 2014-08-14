@@ -23,13 +23,15 @@ class krzipModel extends krzip
             $values[0] = trim(substr($values[0], 0, $parenpos));
         }
         
-        $url = getModel('module')->getModuleConfig('krzip')->krzip_server_url;
-        if (!$url) $url = $this->freeapi_url;
+        $config = getModel('module')->getModuleConfig('krzip');
+        $url = $config->krzip_server_url ? $config->krzip_server_url : $this->freeapi_url;
+        $popup = $config->krzip_use_popup == 'Y' ? 'Y' : 'N';
         
         $krzip_config = new stdClass();
         $krzip_config->column_name = $column_name;
         $krzip_config->values = $values;
         $krzip_config->url = $url;
+        $krzip_config->popup = $popup;
         Context::set('krzip', $krzip_config);
         
         $oTemplate = &TemplateHandler::getInstance();

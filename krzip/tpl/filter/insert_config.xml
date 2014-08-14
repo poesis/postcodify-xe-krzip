@@ -1,6 +1,7 @@
 <filter name="insert_config" module="krzip" act="procKrzipAdminInsertConfig" confirm_msg_code="confirm_submit">
     <form>
         <node target="krzip_server_url" required="true" />
+        <node target="krzip_use_popup" required="true" />
     </form>
     <response>
         <tag name="error" />

@@ -9,8 +9,9 @@ class krzipAdminController extends krzip
 
     public function procKrzipAdminInsertConfig()
     {
-        $args = Context::gets('krzip_server_url');
+        $args = Context::gets('krzip_server_url', 'krzip_use_popup');
         if (!$args->krzip_server_url) $args->krzip_server_url = $this->freeapi_url;
+        if (!$args->krzip_use_popup) $args->krzip_use_popup = 'N';
         
         $oModuleController = getController('module');
         $output = $oModuleController->insertModuleConfig('krzip', $args);

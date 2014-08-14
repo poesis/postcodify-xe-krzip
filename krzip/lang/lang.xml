@@ -6,4 +6,7 @@
     <item name="krzip_server_url">
         <value xml:lang="ko"><![CDATA[검색 서버 주소]]></value>
     </item>
+    <item name="krzip_use_popup">
+        <value xml:lang="ko"><![CDATA[팝업창 사용]]></value>
+    </item>
 </lang>
