@@ -89,3 +89,5 @@ div.postcode_search_status.summary { display: none; }
 #postcodify_search_area #postcodify div.postcode_search_controls .keyword { width: 538px; padding: 5px; }
 #postcodify_search_area #postcodify div.postcode_search_controls .search_button { padding: 5px 10px; border-radius: 4px; }
 #postcodify_search_area #search_guide { margin-left: 0; margin-right: 0; border-radius: 4px; }
+.x #postcodify_search_area #search_guide { display: none; }
+
