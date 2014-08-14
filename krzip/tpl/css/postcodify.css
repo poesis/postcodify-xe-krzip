@@ -1,17 +1,26 @@
 
 /* 입력란 */
 
-.x label.postcodify, .xm label.postcodify { display: inline-block; position: relative; top: -3px; margin-left: 6px; color: #666; }
-.x label.postcodify.postcode, .xm label.postcodify.postcode { display: none; }
-.x input.postcodify, .xm input.postcodify { display: inline-block; width: 600px; margin-bottom: 8px !important; }
-.x input.postcodify.postcode, .xm input.postcodify.postcode { width: 206px; }
-.x button.postcodify, .xm button.postcodify { position: relative; top: -3px; padding: 0px 14px !important; }
+.x label.postcodify,
+.xm label.postcodify { display: inline-block; position: relative; top: -3px; margin-left: 6px; color: #666; }
 
-/* 페이지 */
+.x label.postcodify.postcode,
+.xm label.postcodify.postcode { display: none; }
+
+.x input.postcodify,
+.xm input.postcodify { display: inline-block; width: 600px; margin-bottom: 8px !important; }
+
+.x input.postcodify.postcode,
+.xm input.postcodify.postcode { width: 206px; }
+
+.x button.postcodify,
+.xm button.postcodify { position: relative; top: -3px; padding: 0px 14px !important; }
+
+/* 팝업 문서 */
 
 body.postcodify { margin: 16px; }
 
-/* 페이지 제목 */
+/* 팝업 페이지 제목 */
 
 #postcodify_title { text-align: center; font: bold 20px/150% NanumGothic, sans-serif; margin: 16px; padding: 0; }
 
@@ -74,3 +83,8 @@ div.postcode_search_status.summary { display: none; }
     font: 13px/170% NanumGothic, sans-serif; color: #000;
 }
 #search_guide hr { border: 0; height: 6px; margin: 0; padding: 0; }
+
+#postcodify_search_area #postcodify { margin: 4px 0 12px 0; }
+#postcodify_search_area #postcodify div.postcode_search_controls .keyword { width: 536px; }
+#postcodify_search_area #postcodify div.postcode_search_controls .search_button { border-radius: 4px; }
+#postcodify_search_area #search_guide { margin-left: 0; margin-right: 0; border-radius: 4px; }

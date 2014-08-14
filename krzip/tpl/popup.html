@@ -3,15 +3,19 @@
     <meta charset="UTF-8" />
     <title>우편번호 검색</title>
     <link rel="stylesheet" href="./css/postcodify.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
-    <script src="./js/postcodify.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+	<script src="./js/postcodify.js"></script>
 </head>
 <body class="postcodify">
 
 <h1 id="postcodify_title">우편번호 검색</h1>
 
-<!-- 검색창이 표시되는 곳 -->
+<!-- 팝업 없이 페이지 내에 직접 검색창을 삽입하는 경우 이 부분을 추출 -->
+
+<div id="postcodify_search_area_popup">
+
+<!-- 검색창 -->
 
 <div id="postcodify"></div>
 
@@ -39,6 +43,10 @@
     <hr />
     &nbsp; &nbsp; ※ 건물명보다는 도로명주소 또는 지번 주소로 검색하시는 것이 빠르고 정확합니다.<br /> 
     &nbsp; &nbsp; &#12288; 도로명에 "○○번길" 등의 숫자가 있는 경우에도 잊지 말고 써 주세요.
+</div>
+
+<!-- 추출 부분 끝 -->
+
 </div>
 
 </body>
