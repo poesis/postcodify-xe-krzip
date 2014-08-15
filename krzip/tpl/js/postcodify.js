@@ -3,6 +3,7 @@ jQuery(function() {
     
     var $ = jQuery;
     var api_url = "//api.poesis.kr/post/search.php";
+    var api_setup = false;
     var target_document = $(document);
     var target_document_is_self = (target_document.find("#postcodify_search_button").size() > 0);
     if (target_document_is_self === false) {
@@ -10,6 +11,8 @@ jQuery(function() {
     }
     
     function setup_postcodify() {
+    	if (api_setup) return;
+    	api_setup = true;
         $("#postcodify").postcodify({
             api : api_url,
             insertPostcode6 : "#entry_postcode6",
@@ -51,9 +54,8 @@ jQuery(function() {
                 window.open(search_win_url + "?api=" + encodeURIComponent($(this).data("url")),
                     "postcodify_popup", "width=680,height=540,resizable=yes,scrollbars=yes");
             } else {
-                $("#postcodify_search_area").load(search_win_url + " #postcodify_search_area", function() {
-                    setup_postcodify();
-                });
+                $("#postcodify_search_area").slideDown();
+                setup_postcodify();
             }
         });
     } else {
@@ -61,7 +63,10 @@ jQuery(function() {
         if (api_url_match) {
             api_url = decodeURIComponent(api_url_match[1]);
         }
-        setup_postcodify();
+        $.get("common.html", function(data) {
+        	$(data).insertAfter($("h1"));
+        	setup_postcodify();
+        });
     }
     
 });

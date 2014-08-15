@@ -19,4 +19,8 @@
 <button type="button" id="postcodify_search_button" class="btn delete postcodify" data-popup="{$krzip->popup}" data-url="{$krzip->url}">{$lang->cmd_search}</button>
 <br />
 
-<div id="postcodify_search_area"></div>
+<!--@if($krzip->popup == 'N')-->
+<div id="postcodify_search_area">
+	<!--#include("common.html")-->
+</div>
+<!--@end-->
