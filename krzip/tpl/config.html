@@ -16,19 +16,35 @@
         <div class="x_control-group">
             <label class="x_control-label" for="krzip_server_url">{$lang->krzip_server_url}</label>
             <div class="x_controls">
-                <label class="x_inline">
-                    <input type="text" id="krzip_server_url" name="krzip_server_url" value="{htmlspecialchars($krzip_config->krzip_server_url)}" class="inputTypeText w400" />
-                </label>
+                <input type="text" id="krzip_server_url" name="krzip_server_url" value="{htmlspecialchars($krzip_config->krzip_server_url)}" class="inputTypeText w400" />
             </div>
         </div>
         
         <div class="x_control-group">
-            <label class="x_control-label" for="krzip_use_popup">{$lang->krzip_use_popup}</label>
+            <label class="x_control-label" for="krzip_map_provider">{$lang->krzip_map_provider}</label>
             <div class="x_controls">
-                <label class="x_inline">
-					<label for="krzip_use_popup_y" class="x_inline"><input type="radio" name="krzip_use_popup" id="krzip_use_popup_y" value="Y" checked="checked"|cond="$krzip_config->krzip_use_popup == 'Y'" /> {$lang->cmd_yes}</label>
-					<label for="krzip_use_popup_n" class="x_inline"><input type="radio" name="krzip_use_popup" id="krzip_use_popup_n" value="N" checked="checked"|cond="$krzip_config->krzip_use_popup != 'Y'" /> {$lang->cmd_no}</label>
-                </label>
+                <select name="krzip_map_provider" id="krzip_map_provider">
+                    <option value=""></option>
+                    <option value="daum" selected="selected"|cond="$krzip_config->krzip_map_provider == 'daum'">Daum</option>
+                    <option value="google" selected="selected"|cond="$krzip_config->krzip_map_provider == 'google'">Google</option>
+                    <option value="naver" selected="selected"|cond="$krzip_config->krzip_map_provider == 'naver'">Naver</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="x_control-group">
+            <label class="x_control-label">{$lang->krzip_use_popup}</label>
+            <div class="x_controls">
+                <label for="krzip_use_popup_y" class="x_inline"><input type="radio" name="krzip_use_popup" id="krzip_use_popup_y" value="Y" checked="checked"|cond="$krzip_config->krzip_use_popup == 'Y'" /> {$lang->cmd_yes}</label>
+                <label for="krzip_use_popup_n" class="x_inline"><input type="radio" name="krzip_use_popup" id="krzip_use_popup_n" value="N" checked="checked"|cond="$krzip_config->krzip_use_popup != 'Y'" /> {$lang->cmd_no}</label>
+            </div>
+        </div>
+        
+        <div class="x_control-group">
+            <label class="x_control-label">{$lang->krzip_use_full_jibeon}</label>
+            <div class="x_controls">
+                <label for="krzip_use_full_jibeon_y" class="x_inline"><input type="radio" name="krzip_use_full_jibeon" id="krzip_use_full_jibeon_y" value="Y" checked="checked"|cond="$krzip_config->krzip_use_full_jibeon == 'Y'" /> {$lang->cmd_yes}</label>
+                <label for="krzip_use_full_jibeon_n" class="x_inline"><input type="radio" name="krzip_use_full_jibeon" id="krzip_use_full_jibeon_n" value="N" checked="checked"|cond="$krzip_config->krzip_use_full_jibeon != 'Y'" /> {$lang->cmd_no}</label>
             </div>
         </div>
         

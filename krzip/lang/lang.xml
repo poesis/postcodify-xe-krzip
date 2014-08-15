@@ -2,9 +2,9 @@
 <lang>
     <item name="krzip">
         <value xml:lang="ko"><![CDATA[Postcodify 새주소 우편번호 검색]]></value>
-    	<value xml:lang="en"><![CDATA[Postcodify Korean Postal Code Search]]></value>
-    	<value xml:lang="jp"><![CDATA[Postcodify 韓国郵便番号検索]]></value>
-    	<value xml:lang="zh-CN"><![CDATA[Postcodify 韩国邮编搜索]]></value>
+        <value xml:lang="en"><![CDATA[Postcodify Korean Postal Code Search]]></value>
+        <value xml:lang="jp"><![CDATA[Postcodify 韓国郵便番号検索]]></value>
+        <value xml:lang="zh-CN"><![CDATA[Postcodify 韩国邮编搜索]]></value>
     </item>
     <item name="krzip_server_url">
         <value xml:lang="ko"><![CDATA[검색 서버 주소]]></value>
@@ -12,10 +12,22 @@
         <value xml:lang="jp"><![CDATA[検索サーバーのURL]]></value>
         <value xml:lang="zh-CN"><![CDATA[搜索服务器的URL]]></value>
     </item>
+    <item name="krzip_map_provider">
+        <value xml:lang="ko"><![CDATA[지도 링크 제공]]></value>
+        <value xml:lang="en"><![CDATA[Map link provider]]></value>
+        <value xml:lang="jp"><![CDATA[地図のリンク]]></value>
+        <value xml:lang="zh-CN"><![CDATA[地图链接]]></value>
+    </item>
     <item name="krzip_use_popup">
         <value xml:lang="ko"><![CDATA[팝업창 사용]]></value>
         <value xml:lang="en"><![CDATA[Use pop-up window]]></value>
         <value xml:lang="jp"><![CDATA[ポップアップウィンドウを使用]]></value>
         <value xml:lang="zh-CN"><![CDATA[使用弹出窗口]]></value>
+    </item>
+    <item name="krzip_use_full_jibeon">
+        <value xml:lang="ko"><![CDATA[참고항목에 지번 포함]]></value>
+        <value xml:lang="en"><![CDATA[Include jibeon in extra information]]></value>
+        <value xml:lang="jp"><![CDATA[関連項目に地番を含む]]></value>
+        <value xml:lang="zh-CN"><![CDATA[其中提到的项目批号]]></value>
     </item>
 </lang>

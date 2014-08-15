@@ -16,11 +16,11 @@
 
 <input type="text" class="postcodify postcode" id="postcodify_addr4" name="{$krzip->column_name}[]" readonly="readonly" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
 <label class="postcodify postcode" for="postcodify_addr4">우편번호</label>
-<button type="button" id="postcodify_search_button" class="btn delete postcodify" data-popup="{$krzip->popup}" data-url="{$krzip->url}">{$lang->cmd_search}</button>
+<button type="button" id="postcodify_search_button" class="btn delete postcodify" data-url="{$krzip->url}" data-map-provider="{$krzip->map_provider}" data-popup="{$krzip->popup}" data-use-full-jibeon="{$krzip->use_full_jibeon}">{$lang->cmd_search}</button>
 <br />
 
 <!--@if($krzip->popup == 'N')-->
 <div id="postcodify_search_area">
-	<!--#include("common.html")-->
+    <!--#include("common.html")-->
 </div>
 <!--@end-->

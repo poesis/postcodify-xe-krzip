@@ -2,6 +2,7 @@
     <form>
         <node target="krzip_server_url" required="true" />
         <node target="krzip_use_popup" required="true" />
+        <node target="krzip_use_full_jibeon" required="true" />
     </form>
     <response>
         <tag name="error" />

@@ -50,6 +50,7 @@ div.postcode_search_result:hover div.address a.selector { font-weight: bold; }
 div.postcode_search_result div.code6 { position: absolute; left: 6px; top: 4px; color: #449; }
 div.postcode_search_result div.code5 { display: none; }
 div.postcode_search_result div.address { clear: both; margin-left: 66px; margin-right: 50px; position: relative; cursor: pointer; }
+div.nomap div.postcode_search_result div.address { margin-right: 20px; }
 div.postcode_search_result div.address a.selector { text-decoration: none; cursor: pointer; }
 div.postcode_search_result div.address a.selector span.address_info { color: #000; display: inline-block; margin-right: 8px; }
 div.postcode_search_result div.address a.selector span.extra_info { color: #444; display: inline-block; }
@@ -59,6 +60,7 @@ div.postcode_search_result div.old_addresses { clear: both; color: #888; margin:
 div.postcode_search_result div.map_link { position: absolute; right: 6px; top: 4px; }
 div.postcode_search_result div.map_link a { color: #444; font-size: 11px; text-decoration: none; }
 div.postcode_search_result div.map_link a:hover { color: #44f; text-decoration: underline; }
+div.postcode_search_result div.map_link a:after { width: 0 !important; background-image: none !important; }
 
 /* 검색 상태 및 오류 메시지 스타일 */
 
