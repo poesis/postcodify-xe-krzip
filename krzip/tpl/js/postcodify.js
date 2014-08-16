@@ -67,7 +67,7 @@ jQuery(function() {
                 target_document.find("#postcodify_addr3").val($("#entry_extra_info").val());
                 target_document.find("#postcodify_addr4").val($("#entry_postcode6").val());
                 if (target_document_is_self) {
-                    target_document.find("#postcodify_search_area").empty();
+                    target_document.find("#postcodify_search_area").slideUp();
                 } else {
                     window.open("", "_self", "");
                     window.close();
