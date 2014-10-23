@@ -3,19 +3,19 @@
 <?php $krzip = Context::get('krzip'); ?>
 
 <input type="text" class="postcodify" id="postcodify_addr1" name="{$krzip->column_name}[]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" />
-<label class="postcodify" for="postcodify_addr1">도로명주소</label>
+<label class="postcodify postcodify_address" for="postcodify_addr1">도로명주소</label>
 <br />
 
 <input type="text" class="postcodify" id="postcodify_addr2" name="{$krzip->column_name}[]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
-<label class="postcodify" for="postcodify_addr2">상세주소</label>
+<label class="postcodify postcodify_details" for="postcodify_addr2">상세주소</label>
 <br />
 
 <input type="text" class="postcodify" id="postcodify_addr3" name="{$krzip->column_name}[]" value="{$krzip->values[2]}" data-origin-value="{$krzip->values[2]}" />
-<label class="postcodify" for="postcodify_addr3">참고항목</label>
+<label class="postcodify postcodify_extra_info" for="postcodify_addr3">참고항목</label>
 <br />
 
 <input type="text" class="postcodify postcode" id="postcodify_addr4" name="{$krzip->column_name}[]" readonly="readonly" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
-<label class="postcodify postcode" for="postcodify_addr4">우편번호</label>
+<label class="postcodify postcodify_postcode6 postcode" for="postcodify_addr4">우편번호</label>
 <button type="button" id="postcodify_search_button" class="btn delete postcodify" data-url="{$krzip->url}" data-map-provider="{$krzip->map_provider}" data-popup="{$krzip->popup}" data-use-full-jibeon="{$krzip->use_full_jibeon}">{$lang->cmd_search}</button>
 <br />
 
