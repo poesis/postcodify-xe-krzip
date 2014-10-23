@@ -30,50 +30,45 @@ body.postcodify { margin: 16px; }
     clear: both; width: 620px; margin: 0 auto 16px auto; padding: 0;
     font: 13px/160% NanumGothic, sans-serif;
 }
-#postcodify div.postcode_search_controls { height: 29px; margin-bottom: 16px; }
-#postcodify div.postcode_search_controls .keyword {
+#postcodify div.postcodify_search_controls { height: 29px; margin-bottom: 16px; }
+#postcodify div.postcodify_search_controls .keyword {
     width: 546px; padding: 6px; float: left; font-family: inherit;
     background: #fbfbfb; border: 1px solid #ccc;
 }
-#postcodify div.postcode_search_controls .search_button {
+#postcodify div.postcodify_search_controls .search_button {
     font-size: 13px; width: 60px; border: 0; padding: 6px 10px; float: right; font-family: inherit;
     background: #444; color: #fff;
 }
 
 /* 검색 결과 스타일 */
 
-div.postcode_search_result {
-    clear: both; position: relative; width: 100%; padding: 4px 0px; margin-left: 0px; word-break: keep-all;
-}
-div.postcode_search_result:hover { background: #fbfbfb; }
-div.postcode_search_result:hover div.address a.selector { font-weight: bold; }
-div.postcode_search_result div.code6 { position: absolute; left: 6px; top: 4px; color: #449; }
-div.postcode_search_result div.code5 { display: none; }
-div.postcode_search_result div.address { clear: both; margin-left: 66px; margin-right: 50px; position: relative; cursor: pointer; }
-div.nomap div.postcode_search_result div.address { margin-right: 20px; }
-div.postcode_search_result div.address a.selector { text-decoration: none; cursor: pointer; }
-div.postcode_search_result div.address a.selector span.address_info { color: #000; display: inline-block; margin-right: 8px; }
-div.postcode_search_result div.address a.selector span.extra_info { color: #444; display: inline-block; }
-div.postcode_search_result div.address a.show_old_addresses { position: absolute; right: -16px; top: 0; color: #888; font-size: 11px; text-decoration: none; }
-div.postcode_search_result div.address a.show_old_addresses:hover { color: #44f; }
-div.postcode_search_result div.old_addresses { clear: both; color: #888; margin: 4px 0 0 66px; cursor: pointer; }
-div.postcode_search_result div.map_link { position: absolute; right: 6px; top: 4px; }
-div.postcode_search_result div.map_link a { color: #444; font-size: 11px; text-decoration: none; }
-div.postcode_search_result div.map_link a:hover { color: #44f; text-decoration: underline; }
-div.postcode_search_result div.map_link a:after { width: 0 !important; background-image: none !important; }
+div.postcodify_search_result { clear: both; position: relative; width: 100%; padding: 4px 6px; margin-left: -6px; word-break: keep-all; }
+div.postcodify_search_result:hover { background: #f3f3f6; }
+div.postcodify_search_result:hover div.address a.selector { font-weight: bold; }
+div.postcodify_search_result div.code6 { position: absolute; left: 6px; top: 4px; color: #f36; }
+div.postcodify_search_result div.code5 { display: none; }
+div.postcodify_search_result div.address { clear: both; margin-left: 60px; position: relative; cursor: pointer; }
+div.postcodify_search_result div.address a.selector { text-decoration: none; cursor: pointer; }
+div.postcodify_search_result div.address a.selector span.address_info { color: #000; display: inline-block; margin-right: 8px; }
+div.postcodify_search_result div.address a.selector span.extra_info { color: #444; display: inline-block; }
+div.postcodify_search_result div.address a.show_old_addresses { position: absolute; right: 28px; top: 2px; color: #888; font-size: 11px; text-decoration: none; }
+div.postcodify_search_result div.old_addresses { clear: both; color: #888; margin: 1px 0 0 60px; font-size: 12px; cursor: pointer; }
+div.postcodify_search_result div.map_link { position: absolute; right: 6px; top: 4px; }
+div.postcodify_search_result div.map_link a { color: #444; font-size: 11px; text-decoration: none; }
+div.postcodify_search_result div.map_link a:hover { text-decoration: underline; }
 
 /* 검색 상태 및 오류 메시지 스타일 */
 
-div.postcode_search_status.empty,
-div.postcode_search_status.error,
-div.postcode_search_status.quota,
-div.postcode_search_status.too_many { border: 1px solid #ccc; background: #fbfbfb;
-    padding: 16px; text-align: center; color: #f44;
+div.postcodify_search_status { text-align: center; color: #f36; padding: 32px 0; }
+div.postcodify_search_status.too_many { clear: both; color: #36f; padding-bottom: 6px; margin-top: 8px; }
+div.postcodify_search_status.summary {
+    clear: both; padding: 8px 12px 0 0; margin: 12px -12px -8px -12px;
+    border-top: 1px solid #cacaca; text-align: right;
 }
-div.postcode_search_status.too_many { margin-bottom: 12px; }
-
-div.postcode_search_status.too_short { text-align: center; color: #666; padding: 32px 0; }
-div.postcode_search_status.summary { display: none; }
+div.postcodify_search_status.summary div {
+    display: inline-block; margin: 0 0 0 12px;
+    font-size: 11px; line-height: 120%; color: #888;
+}
 
 /* 검색 도움말 */
 
