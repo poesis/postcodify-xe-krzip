@@ -84,7 +84,11 @@ jQuery(function() {
         
         if (api_use_popup !== "Y") {
             var script = $("<script></script>");
-            script.attr("src", "//d1p7wdleee1q2z.cloudfront.net/post/search.min.js");
+            if (navigator.userAgent.match(/MSIE [5-7]\./)) {
+                script.attr("src", "http://cdn.poesis.kr/post/search.min.js");
+            } else {
+                script.attr("src", "//cdn.poesis.kr/post/search.min.js");
+            }
             script.insertBefore("#postcodify_search_area");
         }
         

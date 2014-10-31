@@ -16,8 +16,8 @@
     <description xml:lang="zh-CN">
         搜索用Postcodify免费的API韩国的邮政编码。
     </description>
-    <version>1.1</version>
-    <date>2014-08-15</date>
+    <version>1.2</version>
+    <date>2014-10-31</date>
     <author email_address="root@poesis.kr" link="http://postcodify.poesis.com/">
         <name xml:lang="ko">Kijin Sung</name>
         <name xml:lang="en">Kijin Sung</name>
