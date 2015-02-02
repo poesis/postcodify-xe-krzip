@@ -8,84 +8,12 @@
 .xm label.postcodify.postcode { display: none; }
 
 .x input.postcodify,
-.xm input.postcodify { display: inline-block; width: 606px; margin-bottom: 8px !important; }
+.xm input.postcodify { display: inline-block; width: 600px; margin-bottom: 8px !important; }
 
 .x input.postcodify.postcode,
 .xm input.postcodify.postcode { width: 206px; }
 
-.x button.postcodify,
-.xm button.postcodify { position: relative; top: -3px; padding: 0px 14px !important; }
+.x button.postcodify_search_button,
+.xm button.postcodify_search_button { position: relative; top: -3px; padding: 0px 12px !important; }
 
-/* 팝업 문서 */
-
-body.postcodify { margin: 16px; }
-
-/* 팝업 페이지 제목 */
-
-#postcodify_title { text-align: center; font: bold 20px/150% NanumGothic, sans-serif; margin: 16px; padding: 0; }
-
-/* 검색 기능이 표시되는 <div> */
-
-#postcodify {
-    clear: both; width: 620px; margin: 0 auto 16px auto; padding: 0;
-    font: 13px/160% NanumGothic, sans-serif;
-}
-#postcodify div.postcodify_search_controls { height: 29px; margin-bottom: 16px; }
-#postcodify div.postcodify_search_controls .keyword {
-    width: 546px; padding: 6px; float: left; font-family: inherit;
-    background: #fbfbfb; border: 1px solid #ccc;
-}
-#postcodify div.postcodify_search_controls .search_button {
-    font-size: 13px; width: 60px; border: 0; padding: 6px 10px; float: right; font-family: inherit;
-    background: #444; color: #fff;
-}
-
-/* 검색 결과 스타일 */
-
-div.postcodify_search_result { clear: both; position: relative; width: 100%; padding: 4px 6px; margin-left: -6px; word-break: keep-all; }
-div.postcodify_search_result:hover { background: #f3f3f6; }
-div.postcodify_search_result:hover div.address a.selector { font-weight: bold; }
-div.postcodify_search_result div.code6 { position: absolute; left: 6px; top: 4px; color: #f36; }
-div.postcodify_search_result div.code5 { display: none; }
-div.postcodify_search_result div.address { clear: both; margin-left: 60px; position: relative; cursor: pointer; }
-div.postcodify_search_result div.address a.selector { text-decoration: none; cursor: pointer; }
-div.postcodify_search_result div.address a.selector span.address_info { color: #000; display: inline-block; margin-right: 8px; }
-div.postcodify_search_result div.address a.selector span.extra_info { color: #444; display: inline-block; }
-div.postcodify_search_result div.address a.show_old_addresses { position: absolute; right: 28px; top: 2px; color: #888; font-size: 11px; text-decoration: none; }
-div.postcodify_search_result div.old_addresses { clear: both; color: #888; margin: 1px 0 0 60px; font-size: 12px; cursor: pointer; }
-div.postcodify_search_result div.map_link { position: absolute; right: 6px; top: 4px; }
-div.postcodify_search_result div.map_link a { color: #444; font-size: 11px; text-decoration: none; }
-div.postcodify_search_result div.map_link a:hover { text-decoration: underline; }
-
-/* 검색 상태 및 오류 메시지 스타일 */
-
-div.postcodify_search_status { text-align: center; color: #f36; padding: 32px 0; }
-div.postcodify_search_status.too_many { clear: both; color: #36f; padding-bottom: 6px; margin-top: 8px; }
-div.postcodify_search_status.summary {
-    clear: both; padding: 8px 12px 0 0; margin: 12px -12px -8px -12px;
-    border-top: 1px solid #cacaca; text-align: right;
-}
-div.postcodify_search_status.summary div {
-    display: inline-block; margin: 0 0 0 12px;
-    font-size: 11px; line-height: 120%; color: #888;
-}
-
-/* 검색 도움말 */
-
-#entry_box { display: none; }
-
-#search_guide {
-    width: 586px; padding: 16px 16px; margin: 0 auto 16px auto;
-    background: #fbfbfb; border: 1px solid #ccc;
-    font: 13px/170% NanumGothic, sans-serif; color: #000;
-}
-#search_guide hr { border: 0; height: 6px; margin: 0; padding: 0; }
-
-#postcodify_search_area { display: none; clear: both; }
-#postcodify_search_area #postcodify { margin: 0 0 12px 0; }
-#postcodify_search_area #postcodify div.postcode_search_controls { margin-bottom: 10px; }
-#postcodify_search_area #postcodify div.postcode_search_controls .keyword { width: 538px; padding: 5px; }
-#postcodify_search_area #postcodify div.postcode_search_controls .search_button { padding: 5px 10px; border-radius: 4px; }
-#postcodify_search_area #search_guide { margin-left: 0; margin-right: 0; border-radius: 4px; }
-.x #postcodify_search_area #search_guide { display: none; }
-
+div.postcodify_hidden_fields { display: none; }

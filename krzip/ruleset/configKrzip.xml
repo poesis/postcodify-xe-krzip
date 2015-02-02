@@ -2,7 +2,9 @@
 <ruleset version="1.5.0">
     <fields>
         <field name="krzip_server_url" required="true" />
-        <field name="krzip_use_popup" required="true" />
+        <field name="krzip_plugin_url" required="true" />
+        <field name="krzip_postcode_format" required="true" />
+        <field name="krzip_require_exact_query" required="true" />
         <field name="krzip_use_full_jibeon" required="true" />
     </fields>
 </ruleset>

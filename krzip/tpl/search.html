@@ -1,26 +1,33 @@
 <load target="css/postcodify.css" />
 <load target="js/postcodify.js" />
+<script src="{$krzip->plugin_url}"></script>
 <?php $krzip = Context::get('krzip'); ?>
 
-<input type="text" class="postcodify" id="postcodify_addr1" name="{$krzip->column_name}[]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" />
+<div id="postcodify_{$krzip->instance_id}" class="postcodify_address_area">
+
+<input type="text" class="postcodify postcode" id="postcodify_{$krzip->instance_id}_addr4" name="{$krzip->column_name}[3]" readonly="readonly"|cond="!$krzip->values[3]" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
+<label class="postcodify postcode" for="postcodify_addr4">우편번호</label>
+<button type="button" class="btn delete postcodify_search_button" data-url="{$krzip->url}" data-map-provider="{$krzip->map_provider}" data-postcode-format="{$krzip->postcode_format}" data-require-exact-query="{$krzip->require_exact_query}" data-use-full-jibeon="{$krzip->use_full_jibeon}">{$lang->cmd_search}</button>
+<br />
+
+<!--@if(!$krzip->values[0] && !$krzip->values[1] && !$krzip->values[2])-->
+<div class="postcodify_hidden_fields">
+<!--@end-->
+
+<input type="text" class="postcodify postcodify_address" id="postcodify_{$krzip->instance_id}_addr1" name="{$krzip->column_name}[0]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" />
 <label class="postcodify postcodify_address" for="postcodify_addr1">도로명주소</label>
 <br />
 
-<input type="text" class="postcodify" id="postcodify_addr2" name="{$krzip->column_name}[]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
+<input type="text" class="postcodify postcodify_details" id="postcodify_{$krzip->instance_id}_addr2" name="{$krzip->column_name}[1]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
 <label class="postcodify postcodify_details" for="postcodify_addr2">상세주소</label>
 <br />
 
-<input type="text" class="postcodify" id="postcodify_addr3" name="{$krzip->column_name}[]" value="{$krzip->values[2]}" data-origin-value="{$krzip->values[2]}" />
+<input type="text" class="postcodify postcodify_extra_info" id="postcodify_{$krzip->instance_id}_addr3" name="{$krzip->column_name}[2]" value="{$krzip->values[2]}" data-origin-value="{$krzip->values[2]}" />
 <label class="postcodify postcodify_extra_info" for="postcodify_addr3">참고항목</label>
 <br />
 
-<input type="text" class="postcodify postcode" id="postcodify_addr4" name="{$krzip->column_name}[]" readonly="readonly" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
-<label class="postcodify postcodify_postcode6 postcode" for="postcodify_addr4">우편번호</label>
-<button type="button" id="postcodify_search_button" class="btn delete postcodify" data-url="{$krzip->url}" data-map-provider="{$krzip->map_provider}" data-popup="{$krzip->popup}" data-use-full-jibeon="{$krzip->use_full_jibeon}">{$lang->cmd_search}</button>
-<br />
-
-<!--@if($krzip->popup == 'N')-->
-<div id="postcodify_search_area">
-    <!--#include("common.html")-->
+<!--@if(!$krzip->values[0] && !$krzip->values[1] && !$krzip->values[2])-->
 </div>
 <!--@end-->
+
+</div>

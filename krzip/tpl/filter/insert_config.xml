@@ -1,7 +1,9 @@
 <filter name="insert_config" module="krzip" act="procKrzipAdminInsertConfig" confirm_msg_code="confirm_submit">
     <form>
         <node target="krzip_server_url" required="true" />
-        <node target="krzip_use_popup" required="true" />
+        <node target="krzip_plugin_url" required="true" />
+        <node target="krzip_postcode_format" required="true" />
+        <node target="krzip_require_exact_query" required="true" />
         <node target="krzip_use_full_jibeon" required="true" />
     </form>
     <response>
