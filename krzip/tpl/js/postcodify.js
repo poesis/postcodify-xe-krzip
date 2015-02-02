@@ -14,9 +14,9 @@ jQuery(function() {
         var container = $(this).parents("div.postcodify_address_area");
         var width = container.width();
         if (width < 700) {
-        	container.find("input.postcodify").not(".postcode").each(function() {
-        		$(this).width(width - 100);
-        	});
+            container.find("input.postcodify").not(".postcode").each(function() {
+                $(this).width(width - 100);
+            });
         }
         
         // 설정을 가져온다.
@@ -43,7 +43,8 @@ jQuery(function() {
             requireExactQuery : (require_exact_query === "Y"),
             forceDisplayPostcode5 : (postcode_format == 5),
             onSelect : function() {
-            	container.find("div.postcodify_hidden_fields").show();
+                container.find("div.postcodify_hidden_fields").show();
+                container.find("input.postcodify.postcode").removeAttr("readonly");
             }
         });
     });
