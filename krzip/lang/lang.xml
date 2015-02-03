@@ -4,6 +4,22 @@
         <value xml:lang="ko"><![CDATA[Postcodify 새주소 우편번호 검색]]></value>
         <value xml:lang="en"><![CDATA[Postcodify Korean Postal Code Search]]></value>
     </item>
+    <item name="krzip_postal_code">
+        <value xml:lang="ko"><![CDATA[우편번호]]></value>
+        <value xml:lang="en"><![CDATA[Postal code]]></value>
+    </item>
+    <item name="krzip_road_address">
+        <value xml:lang="ko"><![CDATA[도로명주소]]></value>
+        <value xml:lang="en"><![CDATA[Street address]]></value>
+    </item>
+    <item name="krzip_details">
+        <value xml:lang="ko"><![CDATA[상세주소]]></value>
+        <value xml:lang="en"><![CDATA[Detailed address]]></value>
+    </item>
+    <item name="krzip_extra_info">
+        <value xml:lang="ko"><![CDATA[참고항목]]></value>
+        <value xml:lang="en"><![CDATA[Extra address]]></value>
+    </item>
     <item name="krzip_server_url">
         <value xml:lang="ko"><![CDATA[검색 서버 주소]]></value>
         <value xml:lang="en"><![CDATA[Search server URL]]></value>
@@ -18,19 +34,15 @@
     </item>
     <item name="krzip_postcode_format_6">
         <value xml:lang="ko"><![CDATA[기존 우편번호 (6자리)]]></value>
-        <value xml:lang="en"><![CDATA[Old format (6 digits)]]></value>
+        <value xml:lang="en"><![CDATA[Old code (6 digits)]]></value>
     </item>
     <item name="krzip_postcode_format_5">
         <value xml:lang="ko"><![CDATA[새 우편번호 (5자리)]]></value>
-        <value xml:lang="en"><![CDATA[New format (5 digits)]]></value>
+        <value xml:lang="en"><![CDATA[New code (5 digits)]]></value>
     </item>
     <item name="krzip_require_exact_query">
         <value xml:lang="ko"><![CDATA[정확한 번호 입력 요구]]></value>
         <value xml:lang="en"><![CDATA[Require exact number]]></value>
-    </item>
-    <item name="krzip_use_popup">
-        <value xml:lang="ko"><![CDATA[팝업창 사용]]></value>
-        <value xml:lang="en"><![CDATA[Use pop-up window]]></value>
     </item>
     <item name="krzip_use_full_jibeon">
         <value xml:lang="ko"><![CDATA[참고항목에 지번 포함]]></value>

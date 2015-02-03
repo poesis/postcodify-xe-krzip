@@ -18,12 +18,15 @@ jQuery(function() {
         // 부모 <div>의 크기에 따라 검색창의 크기를 조절한다.
         
         var container = $(this).parents("div.postcodify_address_area");
-        var width = container.width();
-        if (width < 700) {
-            container.find("input.postcodify").not(".postcode").each(function() {
-                $(this).width(width - 100);
-            });
-        }
+        var inputs = container.find("input.postcodify").not(".postcode");
+        $(window).resize(function() {
+            var width = container.width();
+            if (width < 640) {
+                inputs.width(width - 100);
+            } else {
+                inputs.width(540);
+            }
+        }).triggerHandler("resize");
         
         // 설정을 가져온다.
         
@@ -57,11 +60,11 @@ jQuery(function() {
         // 주소를 처음 입력하는 경우 우편번호 입력란을 클릭하면 자동으로 팝업 레이어가 나타나도록 한다.
         
         container.find("input.postcodify.postcode").each(function() {
-        	if ($(this).attr("readonly")) {
-        		$(this).on("click", function() {
-        			container.find("button.postcodify_search_button").click();
-        		});
-        	}
+            if ($(this).attr("readonly")) {
+                $(this).on("click", function() {
+                    container.find("button.postcodify_search_button").click();
+                });
+            }
         });
     });
 });

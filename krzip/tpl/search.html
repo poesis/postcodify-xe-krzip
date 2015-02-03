@@ -9,23 +9,23 @@
  	data-require-exact-query="{$krzip->require_exact_query}"
  	data-use-full-jibeon="{$krzip->use_full_jibeon}">
 
-<input type="text" class="postcodify postcode" id="postcodify_{$krzip->instance_id}_postcode" name="{$krzip->column_name}[0]" readonly="readonly"|cond="!$krzip->values[0]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" />
-<label class="postcodify postcode" for="postcodify_{$krzip->instance_id}_postcode">우편번호</label>
+<input type="text" class="postcodify postcode" id="postcodify_{$krzip->instance_id}_postcode" name="{$krzip->column_name}[0]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" readonly="readonly"|cond="!$krzip->values[0]" placeholder="{$lang->krzip_postal_code}" />
+<label class="postcodify postcode" for="postcodify_{$krzip->instance_id}_postcode">{$lang->krzip_postal_code}</label>
 <button type="button" class="btn postcodify_search_button">{$lang->cmd_search}</button>
 <br />
 
 <div class="postcodify_hidden_fields"|cond="!$krzip->values[1] && !$krzip->values[2] && !$krzip->values[3]">
 
 <input type="text" class="postcodify postcodify_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[1]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
-<label class="postcodify postcodify_address" for="postcodify_{$krzip->instance_id}_address">도로명주소</label>
+<label class="postcodify postcodify_address" for="postcodify_{$krzip->instance_id}_address">{$lang->krzip_road_address}</label>
 <br />
 
 <input type="text" class="postcodify postcodify_details" id="postcodify_{$krzip->instance_id}_details" name="{$krzip->column_name}[2]" value="{$krzip->values[2]}" data-origin-value="{$krzip->values[2]}" />
-<label class="postcodify postcodify_details" for="postcodify_{$krzip->instance_id}_details">상세주소</label>
+<label class="postcodify postcodify_details" for="postcodify_{$krzip->instance_id}_details">{$lang->krzip_details}</label>
 <br />
 
 <input type="text" class="postcodify postcodify_extra_info" id="postcodify_{$krzip->instance_id}_extra_info" name="{$krzip->column_name}[3]" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
-<label class="postcodify postcodify_extra_info" for="postcodify_{$krzip->instance_id}_extra_info">참고항목</label>
+<label class="postcodify postcodify_extra_info" for="postcodify_{$krzip->instance_id}_extra_info">{$lang->krzip_extra_info}</label>
 <br />
 
 </div>
