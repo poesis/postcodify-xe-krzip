@@ -22,14 +22,14 @@ class krzipModel extends krzip
 		
 		// 안정화 버전의 포맷인 경우 그대로 반환한다
 		
-		if (is_array($values) && count($values) >= 4 && preg_match('/^[0-9a-z-]{5,10}$/i', trim($values[0])))
+		if (is_array($values) && count($values) >= 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])))
 		{
 			return $values;
 		}
 		
 		// 구버전 모듈이 저장한 값인 경우 순서를 바꾸어 반환한다
 		
-		if (is_array($values) && count($values) == 4 && preg_match('/^[0-9a-z-]{5,10}$/i', trim($values[3])))
+		if (is_array($values) && count($values) == 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[3])))
 		{
 			return array_map('trim', array($values[3], $values[0], $values[1], $values[2]));
 		}
