@@ -3,7 +3,6 @@
 class krzip extends ModuleObject
 {
     public $freeapi_url = '//api.poesis.kr/post/search.php';
-    public $plugin_url = '//cdn.poesis.kr/post/popup.min.js';
     
     public function moduleInstall()
     {

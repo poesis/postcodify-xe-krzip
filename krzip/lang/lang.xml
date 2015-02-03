@@ -8,10 +8,6 @@
         <value xml:lang="ko"><![CDATA[검색 서버 주소]]></value>
         <value xml:lang="en"><![CDATA[Search server URL]]></value>
     </item>
-    <item name="krzip_plugin_url">
-        <value xml:lang="ko"><![CDATA[플러그인 로딩 주소]]></value>
-        <value xml:lang="en"><![CDATA[Plugin loading URL]]></value>
-    </item>
     <item name="krzip_map_provider">
         <value xml:lang="ko"><![CDATA[지도 링크 제공]]></value>
         <value xml:lang="en"><![CDATA[Map link provider]]></value>
