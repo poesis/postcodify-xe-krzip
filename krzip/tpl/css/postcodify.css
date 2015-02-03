@@ -16,5 +16,6 @@
 .x button.postcodify_search_button,
 .xm button.postcodify_search_button { position: relative; top: -3px; padding: 0px 12px !important; }
 
+div.postcodify_address_area { margin-bottom: -8px !important; }
 div.postcodify_hidden_fields { display: none; }
 div.postcodify_popup_layer { font-family: "NanumGothic", "Malgun Gothic", Gulim, sans-serif !important; }
