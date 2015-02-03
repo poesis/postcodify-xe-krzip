@@ -50,8 +50,18 @@ jQuery(function() {
             forceDisplayPostcode5 : (postcode_format == 5),
             onSelect : function() {
                 container.find("div.postcodify_hidden_fields").show();
-                container.find("input.postcodify.postcode").removeAttr("readonly");
+                container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
             }
+        });
+        
+        // 주소를 처음 입력하는 경우 우편번호 입력란을 클릭하면 자동으로 팝업 레이어가 나타나도록 한다.
+        
+        container.find("input.postcodify.postcode").each(function() {
+        	if ($(this).attr("readonly")) {
+        		$(this).on("click", function() {
+        			container.find("button.postcodify_search_button").click();
+        		});
+        	}
         });
     });
 });
