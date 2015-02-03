@@ -3,6 +3,7 @@
 class krzip extends ModuleObject
 {
     public $freeapi_url = '//api.poesis.kr/post/search.php';
+    public static $instance_sequence = 0;
     
     public function moduleInstall()
     {

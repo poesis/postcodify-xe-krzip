@@ -27,11 +27,11 @@ jQuery(function() {
         
         // 설정을 가져온다.
         
-        var url = $(this).data("url");
-        var map_provider = $(this).data("map-provider");
-        var postcode_format = parseInt($(this).data("postcode-format"), 10);
-        var require_exact_query = $(this).data("require-exact-query");
-        var use_full_jibeon = $(this).data("use-full-jibeon");
+        var server_url = container.data("server-url");
+        var map_provider = container.data("map-provider");
+        var postcode_format = parseInt(container.data("postcode-format"), 10);
+        var require_exact_query = container.data("require-exact-query");
+        var use_full_jibeon = container.data("use-full-jibeon");
         
         if (postcode_format == 5) {
             container.find("input.postcodify.postcode").addClass("postcodify_postcode5");
@@ -42,7 +42,7 @@ jQuery(function() {
         // 팝업 레이어 플러그인을 셋팅한다.
         
         $(this).postcodifyPopUp({
-            api : url,
+            api : server_url,
             inputParent : container,
             mapLinkProvider : map_provider,
             useFullJibeon : (use_full_jibeon === "Y"),

@@ -104,7 +104,7 @@ class krzipModel extends krzip
     public function getKrzipCodeSearchHtml($column_name, $values)
     {
         $config = getModel('module')->getModuleConfig('krzip');
-        $url = $config->krzip_server_url ? $config->krzip_server_url : $this->freeapi_url;
+        $server_url = $config->krzip_server_url ? $config->krzip_server_url : $this->freeapi_url;
         $map_provider = strval($config->krzip_map_provider);
         $postcode_format = $config->krzip_postcode_format == 6 ? 6 : 5;
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
@@ -113,8 +113,8 @@ class krzipModel extends krzip
         $krzip_config = new stdClass();
         $krzip_config->column_name = $column_name;
         $krzip_config->values = $this->getKrzipStandardFormat($values);
-        $krzip_config->instance_id = mt_rand(100000000, 999999999);
-        $krzip_config->url = $url;
+        $krzip_config->instance_id = ++self::$instance_sequence;
+        $krzip_config->server_url = $server_url;
         $krzip_config->map_provider = $map_provider;
         $krzip_config->postcode_format = $postcode_format;
         $krzip_config->require_exact_query = $require_exact_query;
