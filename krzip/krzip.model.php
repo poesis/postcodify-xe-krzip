@@ -76,7 +76,7 @@ class krzipModel extends krzip
 			$postcode = '';
 		}
 		
-		if (preg_match('/\(.+동(?:,.*)?\)/u', $address, $matches))
+		if (preg_match('/\(.+[동리](?:,.*)?\)/u', $address, $matches))
 		{
 			$address = trim(preg_replace('/\s+/', ' ', str_replace($matches[0], '', $address)));
 			$extra_info = $matches[0];
