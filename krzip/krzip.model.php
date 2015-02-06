@@ -106,7 +106,7 @@ class krzipModel extends krzip
         $config = getModel('module')->getModuleConfig('krzip');
         $server_url = $config->krzip_server_url ? $config->krzip_server_url : $this->freeapi_url;
         $map_provider = strval($config->krzip_map_provider);
-        $postcode_format = $config->krzip_postcode_format == 6 ? 6 : 5;
+        $postcode_format = $config->krzip_postcode_format == 5 ? 5 : 6;
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
         $use_full_jibeon = $config->krzip_use_full_jibeon == 'Y' ? 'Y' : 'N';
     	
