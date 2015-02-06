@@ -18,13 +18,18 @@ jQuery(function() {
         // 부모 <div>의 크기에 따라 검색창의 크기를 조절한다.
         
         var container = $(this).parents("div.postcodify_address_area");
+        var pcinput = container.find("input.postcodify.postcode");
         var inputs = container.find("input.postcodify").not(".postcode");
+        var labels = container.find("label.postcodify").not(".postcode");
         $(window).resize(function() {
             var width = container.width();
-            if (width < 640) {
-                inputs.width(width - 100);
+            pcinput.width(Math.min(206, width - 100));
+            if (width < 360) {
+                inputs.width(width - 16);
+                labels.hide();
             } else {
-                inputs.width(540);
+                inputs.width(Math.min(540, width - 100));
+                labels.show();
             }
         }).triggerHandler("resize");
         
