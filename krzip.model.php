@@ -78,6 +78,11 @@ class krzipModel extends krzip
 			$address = trim(preg_replace('/\s+/', ' ', str_replace($matches[0], '', $address)));
 			$postcode = $matches[1];
 		}
+		elseif (preg_match('/^([0-9]{3}-[0-9]{3})\s/', $address, $matches))
+		{
+			$address = trim(preg_replace('/\s+/', ' ', str_replace($matches[0], '', $address)));
+			$postcode = $matches[1];
+		}
 		else
 		{
 			$postcode = '';
