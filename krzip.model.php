@@ -122,9 +122,15 @@ class krzipModel extends krzip
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
         $use_full_jibeon = $config->krzip_use_full_jibeon == 'Y' ? 'Y' : 'N';
     	
+    	$values = $this->getKrzipStandardFormat($values);
+    	foreach ($values as &$value)
+    	{
+    		$value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8', false);
+    	}
+    	
         $krzip_config = new stdClass();
         $krzip_config->column_name = $column_name;
-        $krzip_config->values = $this->getKrzipStandardFormat($values);
+        $krzip_config->values = $values;
         $krzip_config->instance_id = ++self::$instance_sequence;
         $krzip_config->server_url = $server_url;
         $krzip_config->map_provider = $map_provider;
