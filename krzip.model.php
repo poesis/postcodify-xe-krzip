@@ -20,18 +20,25 @@ class krzipModel extends krzip
 		
 		$values = array_values($values);
 		
-		// 안정화 버전의 포맷인 경우 그대로 반환한다
+		// Postcodify 안정화 버전의 포맷인 경우 그대로 반환한다
 		
 		if (is_array($values) && count($values) >= 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])))
 		{
 			return $values;
 		}
 		
-		// 구버전 모듈이 저장한 값인 경우 순서를 바꾸어 반환한다
+		// Postcodify 구 버전의 포맷인 경우 순서를 바꾸어 반환한다
 		
 		if (is_array($values) && count($values) == 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[3])))
 		{
 			return array_map('trim', array($values[3], $values[0], $values[1], $values[2]));
+		}
+		
+		// Postcodify 안정화 버전의 포맷이지만 XML 처리 과정에서 상세주소가 누락된 경우 상세주소를 채워서 반환한다
+		
+		if (is_array($values) && count($values) == 3 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])) && preg_match('/^\(.+\)$/', trim($values[2])))
+		{
+			return array_map('trim', array($values[0], $values[1], '', $values[2]));
 		}
 		
 		// 기존 krzip 모듈 (#17ed81e 이후)
