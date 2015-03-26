@@ -1,3 +1,10 @@
+<!--@if(isset($_SERVER['HTTP_USER_AGENT']) && preg_match('/MSIE [56]\./', $_SERVER['HTTP_USER_AGENT']))-->
+    <load target="http://cdn.poesis.kr/post/search.min.js" />
+    <load target="http://cdn.poesis.kr/post/popup.min.js" />
+<!--@else-->
+    <load target="https://cdn.poesis.kr/post/search.min.js" />
+    <load target="https://cdn.poesis.kr/post/popup.min.js" />
+<!--@end-->
 <load target="css/postcodify.css" />
 <load target="js/postcodify.js" />
 <?php $krzip = Context::get('krzip'); ?>

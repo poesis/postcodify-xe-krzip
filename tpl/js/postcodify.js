@@ -1,10 +1,4 @@
 
-// Postcodify 플러그인 및 팝업 레이어 스크립트를 로딩한다.
-
-var cdnPrefix = navigator.userAgent.match(/MSIE [5-7]\./) ? "http://cdn.poesis.kr" : "//cdn.poesis.kr";
-document.write('<script type="text/javascript" src="' + cdnPrefix + '/post/search.min.js"></script>');
-document.write('<script type="text/javascript" src="' + cdnPrefix + '/post/popup.min.js"></script>');
-
 jQuery(function() {
     
     // jQuery를 $로 사용할 수 있도록 한다.
