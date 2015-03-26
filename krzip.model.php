@@ -138,9 +138,13 @@ class krzipModel extends krzip
     		$value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8', false);
     	}
     	
-    	if (!strncasecmp($server_url, '//api.poesis.kr/', 16) && !preg_match('/MSIE [56]\./', $_SERVER['HTTP_USER_AGENT']))
+    	if (!strncasecmp($server_url, '//api.poesis.kr/', 16))
     	{
     	    $server_url = 'https:' . $server_url;
+    	}
+    	if (!strncasecmp($server_url, 'https://api.poesis.kr/', 22) && preg_match('/MSIE [56]\./', $_SERVER['HTTP_USER_AGENT']))
+    	{
+    	    $server_url = 'http:' . substr($server_url, 6);
     	}
     	
         $krzip_config = new stdClass();

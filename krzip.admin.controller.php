@@ -15,6 +15,11 @@ class krzipAdminController extends krzip
         if (!$args->krzip_require_exact_query) $args->krzip_require_exact_query = 'N';
         if (!$args->krzip_use_full_jibeon) $args->krzip_use_full_jibeon = 'N';
         
+    	if (!strncasecmp($args->krzip_server_url, '//api.poesis.kr/', 16))
+    	{
+    	    $args->krzip_server_url = 'https:' . $args->krzip_server_url;
+    	}
+    	
         $oModuleController = getController('module');
         $output = $oModuleController->insertModuleConfig('krzip', $args);
         if (!$output->toBool()) return $output;
