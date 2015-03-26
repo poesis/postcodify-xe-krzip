@@ -22,7 +22,7 @@ class krzipModel extends krzip
 		
 		// Postcodify 안정화 버전의 포맷인 경우 그대로 반환한다
 		
-		if (is_array($values) && count($values) >= 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])))
+		if (is_array($values) && count($values) == 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])))
 		{
 			return $values;
 		}
@@ -39,6 +39,16 @@ class krzipModel extends krzip
 		if (is_array($values) && count($values) == 3 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[0])) && preg_match('/^\(.+\)$/', trim($values[2])))
 		{
 			return array_map('trim', array($values[0], $values[1], '', $values[2]));
+		}
+		
+		// 새 krzip 모듈 (도로명주소와 지번주소가 함께 등록되는 형태)
+		
+		if (is_array($values) && count($values) >= 3 && preg_match('/^[0-9-]{5,7}$/i', trim($values[0])) && preg_match('/^\(.+\)$/', trim($values[2])))
+		{
+		    if (mb_strlen($values[1]) > 2 && mb_strlen($values[2]) > 3 && mb_substr($values[1], 0, 2) === mb_substr($values[2], 1, 2))
+		    {
+		        return array_map('trim', array($values[0], $values[1], isset($values[3]) ? $values[3] : '', isset($values[4]) ? $values[4] : ''));
+		    }
 		}
 		
 		// 기존 krzip 모듈 (#17ed81e 이후)
