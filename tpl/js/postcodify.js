@@ -5,9 +5,18 @@ jQuery(function() {
     
     var $ = jQuery;
     
+    // Postcodify 팝업 레이어 플러그인을 로딩한다.
+    
+    var cdnPrefix = navigator.userAgent.match(/MSIE [56]\./) ? "http:" : "https:";
+    $.getScript(cdnPrefix + "//cdn.poesis.kr/post/popup.min.js");
+    
     // 검색 단추에 이벤트를 부착한다.
     
     $("button.postcodify_search_button").each(function() {
+        
+        // 초기화가 완료될 때까지 검색 버튼 클릭을 금지한다.
+        
+        var clickButton = $(this).attr("disabled", "disabled").data("initialized", "N");
         
         // 부모 <div>의 크기에 따라 검색창의 크기를 조절한다.
         
@@ -41,20 +50,30 @@ jQuery(function() {
             container.find("input.postcodify.postcode").addClass("postcodify_postcode6");
         }
         
-        // 팝업 레이어 플러그인을 셋팅한다.
+        // 팝업 레이어 플러그인 로딩이 끝날 때까지 기다렸다가 셋팅한다.
         
-        $(this).postcodifyPopUp({
-            api : server_url,
-            inputParent : container,
-            mapLinkProvider : map_provider,
-            useFullJibeon : (use_full_jibeon === "Y"),
-            requireExactQuery : (require_exact_query === "Y"),
-            forceDisplayPostcode5 : (postcode_format == 5),
-            onSelect : function() {
-                container.find("div.postcodify_hidden_fields").show();
-                container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
+        var waitInterval;
+        waitInterval = setInterval(function() {
+            if (typeof $.fn.postcodify === "undefined" || typeof $.fn.postcodifyPopUp === "undefined") {
+                return;
+            } else {
+                clearInterval(waitInterval);
             }
-        });
+            if (clickButton.data("initialized") !== "Y") {
+                clickButton.data("initialized", "Y").postcodifyPopUp({
+                    api : server_url,
+                    inputParent : container,
+                    mapLinkProvider : map_provider,
+                    useFullJibeon : (use_full_jibeon === "Y"),
+                    requireExactQuery : (require_exact_query === "Y"),
+                    forceDisplayPostcode5 : (postcode_format == 5),
+                    onSelect : function() {
+                        container.find("div.postcodify_hidden_fields").show();
+                        container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
+                    }
+                }).removeAttr("disabled");
+            }
+        }, 100);
         
         // 주소를 처음 입력하는 경우 우편번호 입력란을 클릭하면 자동으로 팝업 레이어가 나타나도록 한다.
         
