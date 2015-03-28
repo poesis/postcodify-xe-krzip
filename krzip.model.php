@@ -2,6 +2,8 @@
 
 class krzipModel extends krzip
 {
+    // 공식 모듈 및 구 버전 모듈과의 호환성을 위해 존재하는 메소드들
+    
     public function init()
     {
         // no-op
@@ -11,10 +13,20 @@ class krzipModel extends krzip
     {
         // no-op
     }
-    
-	// 기존 krzip 모듈이나 구버전 모듈이 저장한 값이 있을 경우 안정화 버전의 포맷에 맞추어 변환한다
 	
 	public function getKrzipStandardFormat($values)
+	{
+	    return $this->convertDataFormat($values);
+	}
+	
+	public function getMigratedPostcode($values)
+	{
+	    return $this->convertDataFormat($values);
+	}
+	
+	// 기존 krzip 모듈이나 구버전 모듈이 저장한 값이 있을 경우 안정화 버전의 포맷에 맞추어 변환한다
+	
+	public function convertDataFormat($values)
 	{
 		// 배열 키를 정리한다
 		
@@ -133,7 +145,7 @@ class krzipModel extends krzip
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
         $use_full_jibeon = $config->krzip_use_full_jibeon == 'Y' ? 'Y' : 'N';
     	
-    	$values = $this->getKrzipStandardFormat($values);
+    	$values = $this->convertDataFormat($values);
     	foreach ($values as &$value)
     	{
     		$value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8', false);

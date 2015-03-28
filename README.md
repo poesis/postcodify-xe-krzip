@@ -57,7 +57,7 @@ Postcodify는 XE에서 제공하는 `krzip` 공식 모듈에 비해 아래와 �
         [3] => 우편번호
     )
 
-기존의 `krzip` 공식 모듈은 버전에 따라 아래와 같은 포맷을 사용했습니다.
+XE에서 배포하는 `krzip` 공식 모듈은 버전에 따라 아래와 같은 포맷을 사용합니다.
 
 2014년 11월 이전:
 
@@ -76,18 +76,30 @@ Postcodify는 XE에서 제공하는 `krzip` 공식 모듈에 비해 아래와 �
         [2] => (부가정보) (우편번호)
     )
 
+2015년 3월 이후 (다음 API 및 우체국 API 이용):
+
+    Array
+    (
+        [0] => 우편번호
+        [1] => 도로명주소
+        [2] => (지번주소)
+        [3] => 상세주소
+        [4] => (부가정보)
+    )
+
 구버전 또는 기존 모듈의 포맷으로 저장된 데이터가 많이 쌓여 있는 경우
 다른 프로그램과의 연동에 지장이 있을 수 있으니, 사용시 변환하거나 일괄 변환을 해주셔야 합니다.
-이 모듈은 기존의 어떤 포맷으로 저장된 주소라도 쉽게 최신 포맷으로 변환할 수 있도록
-`getKrzipStandardFormat()` 메소드를 제공합니다.
+기존의 어떤 포맷으로 저장된 주소라도 쉽게 Postcodify 모듈의 포맷으로 변환할 수 있도록
+`convertDataFormat()` 메소드를 제공하고 있습니다.
 
     // 회원의 주소 정보가 $address에 저장되어 있다고 가정
     $oKrzipModel = getModel('krzip');
-    $address = $oKrzipModel->getKrzipStandardFormat($address);
+    $address = $oKrzipModel->convertDataFormat($address);
 
 
 라이센스
 --------
 
-이 모듈은 XE의 `krzip` 공식 모듈을 바탕으로 작성하였으므로,
-공식 모듈과 같이 LGPL 라이센스를 따릅니다.
+이 모듈은 XE와 같이 LGPLv2.1 라이센스를 따릅니다.
+
+이 모듈에서 호출하여 사용하는 Postcodify 검색 스크립트는 LGPLv3 라이센스를 따릅니다.
