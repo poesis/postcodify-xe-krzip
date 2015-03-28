@@ -27,7 +27,7 @@ jQuery(function() {
         var pcinput = container.find("input.postcodify.postcode");
         var inputs = container.find("input.postcodify").not(".postcode");
         var labels = container.find("label.postcodify").not(".postcode");
-        $(window).resize(function() {
+        var windowResizeCallback = function() {
             var width = container.width();
             pcinput.width(Math.min(206, width - 100));
             if (width < 360) {
@@ -37,7 +37,9 @@ jQuery(function() {
                 inputs.width(Math.min(540, width - 100));
                 labels.show();
             }
-        }).triggerHandler("resize");
+        };
+        $(window).resize(windowResizeCallback);
+        windowResizeCallback();
         
         // 설정을 가져온다.
         
@@ -59,7 +61,6 @@ jQuery(function() {
         var waitInterval;
         waitInterval = setInterval(function() {
             if (typeof $.fn.postcodify === "undefined" || typeof $.fn.postcodifyPopUp === "undefined") {
-                $("header h1").append('x');
                 return;
             } else {
                 clearInterval(waitInterval);
