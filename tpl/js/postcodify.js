@@ -41,6 +41,7 @@ jQuery(function() {
         var server_url = container.data("server-url");
         var map_provider = container.data("map-provider");
         var postcode_format = parseInt(container.data("postcode-format"), 10);
+        var server_request_format = container.data("server-request-format");
         var require_exact_query = container.data("require-exact-query");
         var use_full_jibeon = container.data("use-full-jibeon");
         
@@ -64,6 +65,7 @@ jQuery(function() {
                     api : server_url,
                     inputParent : container,
                     mapLinkProvider : map_provider,
+                    useCors : (server_request_format !== "JSONP"),
                     useFullJibeon : (use_full_jibeon === "Y"),
                     requireExactQuery : (require_exact_query === "Y"),
                     forceDisplayPostcode5 : (postcode_format == 5),

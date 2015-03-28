@@ -16,7 +16,7 @@
         <div class="x_control-group">
             <label class="x_control-label" for="krzip_server_url">{$lang->krzip_server_url}</label>
             <div class="x_controls">
-                <input type="text" id="krzip_server_url" name="krzip_server_url" value="{htmlspecialchars($krzip_config->krzip_server_url)}" class="inputTypeText w400" />
+                <input type="text" id="krzip_server_url" name="krzip_server_url" value="{htmlspecialchars($krzip_config->krzip_server_url)}" class="inputTypeText" style="width:92%" />
             </div>
         </div>
         
@@ -24,11 +24,19 @@
             <label class="x_control-label" for="krzip_map_provider">{$lang->krzip_map_provider}</label>
             <div class="x_controls">
                 <select name="krzip_map_provider" id="krzip_map_provider">
-                    <option value=""></option>
-                    <option value="daum" selected="selected"|cond="$krzip_config->krzip_map_provider == 'daum'">Daum</option>
-                    <option value="google" selected="selected"|cond="$krzip_config->krzip_map_provider == 'google'">Google</option>
-                    <option value="naver" selected="selected"|cond="$krzip_config->krzip_map_provider == 'naver'">Naver</option>
+                    <option value="">{$lang->krzip_map_provider_none}</option>
+                    <option value="daum" selected="selected"|cond="$krzip_config->krzip_map_provider == 'daum'">{$lang->krzip_map_provider_daum}</option>
+                    <option value="naver" selected="selected"|cond="$krzip_config->krzip_map_provider == 'naver'">{$lang->krzip_map_provider_naver}</option>
+                    <option value="google" selected="selected"|cond="$krzip_config->krzip_map_provider == 'google'">{$lang->krzip_map_provider_google}</option>
                 </select>
+            </div>
+        </div>
+        
+        <div class="x_control-group">
+            <label class="x_control-label">{$lang->krzip_server_request_format}</label>
+            <div class="x_controls">
+                <label for="krzip_server_request_format_cors" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_cors" value="CORS" checked="checked"|cond="$krzip_config->krzip_server_request_format != 'JSONP'" /> {$lang->krzip_server_request_format_cors}</label>
+                <label for="krzip_server_request_format_jsonp" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_jsonp" value="JSONP" checked="checked"|cond="$krzip_config->krzip_server_request_format == 'JSONP'" /> {$lang->krzip_server_request_format_jsonp}</label>
             </div>
         </div>
         

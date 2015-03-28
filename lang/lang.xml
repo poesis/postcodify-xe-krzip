@@ -28,6 +28,34 @@
         <value xml:lang="ko"><![CDATA[지도 링크 제공]]></value>
         <value xml:lang="en"><![CDATA[Map link provider]]></value>
     </item>
+    <item name="krzip_map_provider_none">
+        <value xml:lang="ko"><![CDATA[사용하지 않음]]></value>
+        <value xml:lang="en"><![CDATA[N/A]]></value>
+    </item>
+    <item name="krzip_map_provider_daum">
+        <value xml:lang="ko"><![CDATA[다음]]></value>
+        <value xml:lang="en"><![CDATA[Daum]]></value>
+    </item>
+    <item name="krzip_map_provider_naver">
+        <value xml:lang="ko"><![CDATA[네이버]]></value>
+        <value xml:lang="en"><![CDATA[Naver]]></value>
+    </item>
+    <item name="krzip_map_provider_google">
+        <value xml:lang="ko"><![CDATA[구글]]></value>
+        <value xml:lang="en"><![CDATA[Google]]></value>
+    </item>
+    <item name="krzip_server_request_format">
+        <value xml:lang="ko"><![CDATA[검색 서버 통신 방식]]></value>
+        <value xml:lang="en"><![CDATA[Server request format]]></value>
+    </item>
+    <item name="krzip_server_request_format_cors">
+        <value xml:lang="ko"><![CDATA[CORS (권장)]]></value>
+        <value xml:lang="en"><![CDATA[CORS (recommended)]]></value>
+    </item>
+    <item name="krzip_server_request_format_jsonp">
+        <value xml:lang="ko"><![CDATA[JSONP]]></value>
+        <value xml:lang="en"><![CDATA[JSONP]]></value>
+    </item>
     <item name="krzip_postcode_format">
         <value xml:lang="ko"><![CDATA[우편번호 입력 형식]]></value>
         <value xml:lang="en"><![CDATA[Postal code format]]></value>
