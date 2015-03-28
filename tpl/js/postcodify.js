@@ -7,7 +7,7 @@ jQuery(function() {
     
     // Postcodify 팝업 레이어 플러그인을 로딩한다.
     
-    var cdnPrefix = navigator.userAgent.match(/MSIE [56]\./) ? "http:" : "https:";
+    var cdnPrefix = navigator.userAgent.match(/MSIE [56]\./) ? "http:" : "";
     $.getScript(cdnPrefix + "//cdn.poesis.kr/post/popup.min.js");
     
     // 검색 단추에 이벤트를 부착한다.
