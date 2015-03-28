@@ -8,8 +8,8 @@
     <description xml:lang="en">
         Search Korean postal codes using the Postcodify free API.
     </description>
-    <version>2.2</version>
-    <date>2015-03-27</date>
+    <version>2.3</version>
+    <date>2015-03-29</date>
     <author email_address="root@poesis.kr" link="http://postcodify.poesis.kr/">
         <name xml:lang="ko">Kijin Sung</name>
         <name xml:lang="en">Kijin Sung</name>
