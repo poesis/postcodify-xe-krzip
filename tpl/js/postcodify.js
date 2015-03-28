@@ -16,20 +16,20 @@ jQuery(function() {
         
         // 초기화가 완료될 때까지 검색 버튼 클릭을 금지한다.
         
-        var clickButton = $(this).data("initialized", "N");
-        clickButton.on("click", function() {
+        var searchButton = $(this).data("initialized", "N");
+        searchButton.on("click", function() {
             alert($(this).data("not-loaded-yet"));
         });
         
         // 부모 <div>의 크기에 따라 검색창의 크기를 조절한다.
         
         var container = $(this).parents("div.postcodify_address_area");
-        var pcinput = container.find("input.postcodify.postcode");
+        var postcodeInput = container.find("input.postcodify.postcode");
         var inputs = container.find("input.postcodify").not(".postcode");
         var labels = container.find("label.postcodify").not(".postcode");
         var windowResizeCallback = function() {
             var width = container.width();
-            pcinput.width(Math.min(206, width - 100));
+            postcodeInput.width(Math.min(206, width - 100));
             if (width < 360) {
                 inputs.width(width - 16);
                 labels.hide();
@@ -43,14 +43,14 @@ jQuery(function() {
         
         // 설정을 가져온다.
         
-        var server_url = container.data("server-url");
-        var map_provider = container.data("map-provider");
-        var postcode_format = parseInt(container.data("postcode-format"), 10);
-        var server_request_format = container.data("server-request-format");
-        var require_exact_query = container.data("require-exact-query");
-        var use_full_jibeon = container.data("use-full-jibeon");
+        var serverUrl = container.data("server-url");
+        var mapLinkProvider = container.data("map-provider");
+        var postcodeFormat = parseInt(container.data("postcode-format"), 10);
+        var serverRequestFormat = container.data("server-request-format");
+        var requireExactQuery = container.data("require-exact-query");
+        var useFullJibeon = container.data("use-full-jibeon");
         
-        if (postcode_format == 5) {
+        if (postcodeFormat == 5) {
             container.find("input.postcodify.postcode").addClass("postcodify_postcode5");
         } else {
             container.find("input.postcodify.postcode").addClass("postcodify_postcode6");
@@ -65,15 +65,15 @@ jQuery(function() {
             } else {
                 clearInterval(waitInterval);
             }
-            if (clickButton.data("initialized") !== "Y") {
-                clickButton.data("initialized", "Y").off("click").postcodifyPopUp({
-                    api : server_url,
+            if (searchButton.data("initialized") !== "Y") {
+                searchButton.data("initialized", "Y").off("click").postcodifyPopUp({
+                    api : serverUrl,
                     inputParent : container,
-                    mapLinkProvider : map_provider,
-                    useCors : (server_request_format !== "JSONP"),
-                    useFullJibeon : (use_full_jibeon === "Y"),
-                    requireExactQuery : (require_exact_query === "Y"),
-                    forceDisplayPostcode5 : (postcode_format == 5),
+                    mapLinkProvider : mapLinkProvider,
+                    useCors : (serverRequestFormat !== "JSONP"),
+                    useFullJibeon : (useFullJibeon === "Y"),
+                    requireExactQuery : (requireExactQuery === "Y"),
+                    forceDisplayPostcode5 : (postcodeFormat == 5),
                     onSelect : function() {
                         container.find("div.postcodify_hidden_fields").show();
                         container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
