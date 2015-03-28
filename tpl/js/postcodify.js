@@ -16,7 +16,10 @@ jQuery(function() {
         
         // 초기화가 완료될 때까지 검색 버튼 클릭을 금지한다.
         
-        var clickButton = $(this).attr("disabled", "disabled").data("initialized", "N");
+        var clickButton = $(this).data("initialized", "N");
+        clickButton.on("click", function() {
+            alert($(this).data("not-loaded-yet"));
+        });
         
         // 부모 <div>의 크기에 따라 검색창의 크기를 조절한다.
         
@@ -56,12 +59,13 @@ jQuery(function() {
         var waitInterval;
         waitInterval = setInterval(function() {
             if (typeof $.fn.postcodify === "undefined" || typeof $.fn.postcodifyPopUp === "undefined") {
+                $("header h1").append('x');
                 return;
             } else {
                 clearInterval(waitInterval);
             }
             if (clickButton.data("initialized") !== "Y") {
-                clickButton.data("initialized", "Y").postcodifyPopUp({
+                clickButton.data("initialized", "Y").off("click").postcodifyPopUp({
                     api : server_url,
                     inputParent : container,
                     mapLinkProvider : map_provider,
@@ -73,7 +77,7 @@ jQuery(function() {
                         container.find("div.postcodify_hidden_fields").show();
                         container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
                     }
-                }).removeAttr("disabled");
+                });
             }
         }, 100);
         

@@ -12,7 +12,7 @@
 
 <input type="text" class="postcodify postcode" id="postcodify_{$krzip->instance_id}_postcode" name="{$krzip->column_name}[]" value="{$krzip->values[0]}" data-origin-value="{$krzip->values[0]}" readonly="readonly"|cond="!$krzip->values[0]" placeholder="{$lang->krzip_postal_code}" />
 <label class="postcodify postcode" for="postcodify_{$krzip->instance_id}_postcode">{$lang->krzip_postal_code}</label>
-<button type="button" class="btn postcodify_search_button">{$lang->cmd_search}</button>
+<button type="button" class="btn postcodify_search_button" data-not-loaded-yet="{$lang->krzip_postcodify_not_loaded_yet}">{$lang->cmd_search}</button>
 <br />
 
 <div class="postcodify_hidden_fields"|cond="!$krzip->values[1] && !$krzip->values[2] && !$krzip->values[3]">

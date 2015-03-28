@@ -76,4 +76,8 @@
         <value xml:lang="ko"><![CDATA[참고항목에 지번 포함]]></value>
         <value xml:lang="en"><![CDATA[Include number in extra information]]></value>
     </item>
+    <item name="krzip_postcodify_not_loaded_yet">
+        <value xml:lang="ko"><![CDATA[우편번호 검색 모듈이 아직 완전히 로딩되지 않았습니다. 잠시만 기다려 주십시오.]]></value>
+        <value xml:lang="en"><![CDATA[The postal code search module has not finished loading yet. Please wait a few moments.]]></value>
+    </item>
 </lang>
