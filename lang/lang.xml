@@ -12,6 +12,10 @@
         <value xml:lang="ko"><![CDATA[도로명주소]]></value>
         <value xml:lang="en"><![CDATA[Street address]]></value>
     </item>
+    <item name="krzip_jibeon_address">
+        <value xml:lang="ko"><![CDATA[지번주소]]></value>
+        <value xml:lang="en"><![CDATA[Old address]]></value>
+    </item>
     <item name="krzip_details">
         <value xml:lang="ko"><![CDATA[상세주소]]></value>
         <value xml:lang="en"><![CDATA[Detailed address]]></value>

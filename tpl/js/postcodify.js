@@ -45,6 +45,7 @@ jQuery(function() {
         
         var serverUrl = container.data("server-url");
         var mapLinkProvider = container.data("map-provider");
+        var addressFormat = container.data("address-format");
         var postcodeFormat = parseInt(container.data("postcode-format"), 10);
         var serverRequestFormat = container.data("server-request-format");
         var requireExactQuery = container.data("require-exact-query");
@@ -75,8 +76,26 @@ jQuery(function() {
                     requireExactQuery : (requireExactQuery === "Y"),
                     forceDisplayPostcode5 : (postcodeFormat == 5),
                     onSelect : function() {
+                        var postcode = container.find("input.postcodify.postcode").val();
                         container.find("div.postcodify_hidden_fields").show();
-                        container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
+                        if (addressFormat === "postcodify" || addressFormat === "newkrzip") {
+                            container.find("input.postcodify.postcode").removeAttr("readonly").off("click");
+                        }
+                        if (addressFormat === "newkrzip") {
+                            var jibeon_input = container.find("input.postcodify_jibeon_address");
+                            if (jibeon_input.val()) {
+                                 jibeon_input.val("(" + jibeon_input.val() + ")");
+                            }
+                        }
+                        if (addressFormat === "oldkrzip3") {
+                            var extra_input = container.find("input.postcodify_extra_info");
+                            extra_input.val(extra_input.val() + " (" + postcode + ")");
+                        }
+                        if (addressFormat === "oldkrzip2") {
+                            var addr_input = container.find("input.postcodify_address");
+                            var extra_info = container.find("input.postcodify_extra_info").val();
+                            addr_input.val(addr_input.val() + " " + extra_info + " (" + postcode + ")");
+                        }
                     }
                 });
             }
