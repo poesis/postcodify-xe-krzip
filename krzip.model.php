@@ -26,7 +26,7 @@ class krzipModel extends krzip
 	
 	// 기존 krzip 모듈이나 구버전 모듈이 저장한 값이 있을 경우 안정화 버전의 포맷에 맞추어 변환한다
 	
-	public function convertDataFormat($values)
+	public function convertDataFormat($values, $return_extra_values = false)
 	{
 		// 배열 키를 정리한다
 		
@@ -41,7 +41,7 @@ class krzipModel extends krzip
 		
 		// Postcodify 구 버전의 포맷인 경우 순서를 바꾸어 반환한다
 		
-		if (is_array($values) && count($values) == 4 && preg_match('/^[0-9a-z\x20-]{5,10}$/i', trim($values[3])))
+		if (is_array($values) && count($values) == 4 && preg_match('/^([0-9]{5}|[0-9]{3}-[0-9]{3})$/i', trim($values[3])))
 		{
 			return array_map('trim', array($values[3], $values[0], $values[1], $values[2]));
 		}
@@ -55,17 +55,22 @@ class krzipModel extends krzip
 		
 		// 새 krzip 모듈 (도로명주소와 지번주소가 함께 등록되는 형태)
 		
-		if (is_array($values) && count($values) >= 3 && preg_match('/^[0-9-]{5,7}$/i', trim($values[0])) && preg_match('/^\(.+\)$/', trim($values[2])))
+		if (is_array($values) && count($values) >= 3 && preg_match('/^([0-9]{5}|[0-9]{3}-[0-9]{3})$/i', trim($values[0])) && preg_match('/^\(.+\)$/', trim($values[2])))
 		{
 		    if (mb_strlen($values[1]) > 2 && mb_strlen($values[2]) > 3 && mb_substr($values[1], 0, 2) === mb_substr($values[2], 1, 2))
 		    {
-		        return array_map('trim', array($values[0], $values[1], isset($values[3]) ? $values[3] : '', isset($values[4]) ? $values[4] : ''));
+		        $retval = array_map('trim', array($values[0], $values[1], isset($values[3]) ? $values[3] : '', isset($values[4]) ? $values[4] : ''));
+		        if ($return_extra_values && strval($values[2]) !== '')
+		        {
+		            $retval['jibeon_address'] = '(' . trim($values[2], ' ()') . ')';
+		        }
+		        return $retval;
 		    }
 		}
 		
 		// 기존 krzip 모듈 (#17ed81e 이후)
 		
-		if (is_array($values) && count($values) == 3 && preg_match('/^(.*)\(([0-9]{3}-[0-9]{3})\)\s*$/', $values[2], $matches))
+		if (is_array($values) && count($values) == 3 && preg_match('/^(.*)\(([0-9]{5}|[0-9]{3}-[0-9]{3})\)\s*$/', $values[2], $matches))
 		{
 			$postcode = $matches[2];
 			$values[2] = preg_replace('/,\s*\)/', ')', $matches[1]);
@@ -74,7 +79,7 @@ class krzipModel extends krzip
 		
 		// 기존 krzip 모듈 (#3a932f6 이전)
 		
-		if (is_array($values) && count($values) == 2 && preg_match('/^(.*)\(([0-9]{3}-[0-9]{3})\)\s*$/', $values[0], $matches))
+		if (is_array($values) && count($values) == 2 && preg_match('/^(.*)\(([0-9]{5}|[0-9]{3}-[0-9]{3})\)\s*$/', $values[0], $matches))
 		{
 			$postcode = $matches[2];
 			$values[0] = $matches[1];
@@ -146,7 +151,7 @@ class krzipModel extends krzip
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
         $use_full_jibeon = $config->krzip_use_full_jibeon == 'Y' ? 'Y' : 'N';
     	
-    	$values = $this->convertDataFormat($values);
+    	$values = $this->convertDataFormat($values, true);
     	foreach ($values as &$value)
     	{
     		$value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8', false);
