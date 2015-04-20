@@ -33,10 +33,14 @@
         </div>
         
         <div class="x_control-group">
-            <label class="x_control-label">{$lang->krzip_server_request_format}</label>
+            <label class="x_control-label">{$lang->krzip_address_format}</label>
             <div class="x_controls">
-                <label for="krzip_server_request_format_cors" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_cors" value="CORS" checked="checked"|cond="$krzip_config->krzip_server_request_format != 'JSONP'" /> {$lang->krzip_server_request_format_cors}</label>
-                <label for="krzip_server_request_format_jsonp" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_jsonp" value="JSONP" checked="checked"|cond="$krzip_config->krzip_server_request_format == 'JSONP'" /> {$lang->krzip_server_request_format_jsonp}</label>
+                <select name="krzip_address_format" id="krzip_address_format">
+                    <option value="postcodify" selected="selected"|cond="$krzip_config->krzip_address_format == 'postcodify'">{$lang->krzip_address_format_postcodify}</option>
+                    <option value="newkrzip" selected="selected"|cond="$krzip_config->krzip_address_format == 'newkrzip'">{$lang->krzip_address_format_newkrzip}</option>
+                    <option value="oldkrzip3" selected="selected"|cond="$krzip_config->krzip_address_format == 'oldkrzip3'">{$lang->krzip_address_format_oldkrzip3}</option>
+                    <option value="oldkrzip2" selected="selected"|cond="$krzip_config->krzip_address_format == 'oldkrzip2'">{$lang->krzip_address_format_oldkrzip2}</option>
+                </select>
             </div>
         </div>
         
@@ -45,6 +49,14 @@
             <div class="x_controls">
                 <label for="krzip_postcode_format_6" class="x_inline"><input type="radio" name="krzip_postcode_format" id="krzip_postcode_format_6" value="6" checked="checked"|cond="$krzip_config->krzip_postcode_format == 6" /> {$lang->krzip_postcode_format_6}</label>
                 <label for="krzip_postcode_format_5" class="x_inline"><input type="radio" name="krzip_postcode_format" id="krzip_postcode_format_5" value="5" checked="checked"|cond="$krzip_config->krzip_postcode_format == 5" /> {$lang->krzip_postcode_format_5}</label>
+            </div>
+        </div>
+        
+        <div class="x_control-group">
+            <label class="x_control-label">{$lang->krzip_server_request_format}</label>
+            <div class="x_controls">
+                <label for="krzip_server_request_format_cors" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_cors" value="CORS" checked="checked"|cond="$krzip_config->krzip_server_request_format != 'JSONP'" /> {$lang->krzip_server_request_format_cors}</label>
+                <label for="krzip_server_request_format_jsonp" class="x_inline"><input type="radio" name="krzip_server_request_format" id="krzip_server_request_format_jsonp" value="JSONP" checked="checked"|cond="$krzip_config->krzip_server_request_format == 'JSONP'" /> {$lang->krzip_server_request_format_jsonp}</label>
             </div>
         </div>
         

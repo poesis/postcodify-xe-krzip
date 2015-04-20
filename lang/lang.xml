@@ -56,6 +56,26 @@
         <value xml:lang="ko"><![CDATA[JSONP]]></value>
         <value xml:lang="en"><![CDATA[JSONP]]></value>
     </item>
+    <item name="krzip_address_format">
+        <value xml:lang="ko"><![CDATA[주소 입력 형식]]></value>
+        <value xml:lang="en"><![CDATA[Address format]]></value>
+    </item>
+    <item name="krzip_address_format_postcodify">
+        <value xml:lang="ko"><![CDATA[Postcodify 기본 형식]]></value>
+        <value xml:lang="en"><![CDATA[Postcodify default]]></value>
+    </item>
+    <item name="krzip_address_format_newkrzip">
+        <value xml:lang="ko"><![CDATA[새 krzip 모듈 형식]]></value>
+        <value xml:lang="en"><![CDATA[New krzip module]]></value>
+    </item>
+    <item name="krzip_address_format_oldkrzip3">
+        <value xml:lang="ko"><![CDATA[구 krzip 모듈 형식 (입력란 3개)]]></value>
+        <value xml:lang="en"><![CDATA[Old krzip module (3 boxes)]]></value>
+    </item>
+    <item name="krzip_address_format_oldkrzip2">
+        <value xml:lang="ko"><![CDATA[구 krzip 모듈 형식 (입력란 2개)]]></value>
+        <value xml:lang="en"><![CDATA[Old krzip module (2 boxes)]]></value>
+    </item>
     <item name="krzip_postcode_format">
         <value xml:lang="ko"><![CDATA[우편번호 입력 형식]]></value>
         <value xml:lang="en"><![CDATA[Postal code format]]></value>

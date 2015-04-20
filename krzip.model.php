@@ -140,8 +140,9 @@ class krzipModel extends krzip
         $config = getModel('module')->getModuleConfig('krzip');
         $server_url = $config->krzip_server_url ? $config->krzip_server_url : $this->freeapi_url;
         $map_provider = strval($config->krzip_map_provider);
-        $server_request_format = $config->krzip_server_request_format == 'JSONP' ? 'JSONP' : 'CORS';
+        $address_format = $config->krzip_address_format ? $config->krzip_address_format : 'postcodify';
         $postcode_format = $config->krzip_postcode_format == 5 ? 5 : 6;
+        $server_request_format = $config->krzip_server_request_format == 'JSONP' ? 'JSONP' : 'CORS';
         $require_exact_query = $config->krzip_require_exact_query == 'Y' ? 'Y' : 'N';
         $use_full_jibeon = $config->krzip_use_full_jibeon == 'Y' ? 'Y' : 'N';
     	
@@ -166,8 +167,9 @@ class krzipModel extends krzip
         $krzip_config->instance_id = ++self::$instance_sequence;
         $krzip_config->server_url = $server_url;
         $krzip_config->map_provider = $map_provider;
-        $krzip_config->server_request_format = $server_request_format;
+        $krzip_config->address_format = $address_format;
         $krzip_config->postcode_format = $postcode_format;
+        $krzip_config->server_request_format = $server_request_format;
         $krzip_config->require_exact_query = $require_exact_query;
         $krzip_config->use_full_jibeon = $use_full_jibeon;
         Context::set('krzip', $krzip_config);
