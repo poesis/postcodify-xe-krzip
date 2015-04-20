@@ -87,6 +87,10 @@ XE에서 배포하는 `krzip` 공식 모듈은 버전에 따라 아래와 같은
     $oKrzipModel = getModel('krzip');
     $address = $oKrzipModel->convertDataFormat($address);
 
+반드시 기존 포맷의 주소가 필요하신 경우에는 모듈 설정 페이지에서
+기존 krzip 모듈과 같은 포맷을 사용하도록 설정할 수 있습니다.
+(위에서 나열한 3가지 포맷 모두 지원합니다.)
+
 
 라이센스
 --------
