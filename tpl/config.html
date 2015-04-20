@@ -82,3 +82,11 @@
         
     </form>
 </section>
+
+<section class="section">
+	<h2>{$lang->krzip_form_preview}</h2>
+	<p>{$lang->krzip_form_preview_needs_refresh}</p>
+    <div class="x_control-group">
+    	<?php echo getModel('krzip')->getKrzipCodeSearchHtml('preview', array()); ?>
+    </div>
+</section>

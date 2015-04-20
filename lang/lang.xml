@@ -100,6 +100,14 @@
         <value xml:lang="ko"><![CDATA[참고항목에 지번 포함]]></value>
         <value xml:lang="en"><![CDATA[Include number in extra information]]></value>
     </item>
+    <item name="krzip_form_preview">
+        <value xml:lang="ko"><![CDATA[미리보기]]></value>
+        <value xml:lang="en"><![CDATA[Preview]]></value>
+    </item>
+    <item name="krzip_form_preview_needs_refresh">
+        <value xml:lang="ko"><![CDATA[위의 설정을 변경하신 후에는 '등록'을 클릭해야 미리보기에 적용됩니다.]]></value>
+        <value xml:lang="en"><![CDATA[Any changes made above will not apply to the preview until you save them.]]></value>
+    </item>
     <item name="krzip_postcodify_not_loaded_yet">
         <value xml:lang="ko"><![CDATA[우편번호 검색 모듈이 아직 완전히 로딩되지 않았습니다. 잠시만 기다려 주십시오.]]></value>
         <value xml:lang="en"><![CDATA[The postal code search module has not finished loading yet. Please wait a few moments.]]></value>
