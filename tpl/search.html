@@ -42,7 +42,7 @@
         
         <!--@elseif($krzip->address_format === 'oldkrzip3')-->
         
-        <input type="text" class="postcodify postcodify_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
+        <input type="text" class="postcodify postcodify_address current_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
         <label class="postcodify postcodify_address" for="postcodify_{$krzip->instance_id}_address">{$lang->krzip_road_address}</label>
         <br />
         
@@ -56,7 +56,7 @@
         
         <!--@elseif($krzip->address_format === 'oldkrzip2')-->
         
-        <input type="text" class="postcodify postcodify_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[]" value="{$krzip->values[1]} {$krzip->values[3]} ({$krzip->values[0]})" data-origin-value="{$krzip->values[1]} {$krzip->values[3]} ({$krzip->values[0]})" />
+        <input type="text" class="postcodify postcodify_address current_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[]" value="{$krzip->values[1]} {$krzip->values[3]} ({$krzip->values[0]})" data-origin-value="{$krzip->values[1]} {$krzip->values[3]} ({$krzip->values[0]})" />
         <label class="postcodify postcodify_address" for="postcodify_{$krzip->instance_id}_address">{$lang->krzip_road_address}</label>
         <br />
         
