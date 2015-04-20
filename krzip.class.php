@@ -8,7 +8,7 @@ class krzip extends ModuleObject
     {
         $defaults = array(
             'server_url' => 'https://api.poesis.kr/post/search.php',
-            'map_provider' => '',
+            'map_provider' => 'naver',
             'address_format' => 'postcodify',
             'postcode_format' => 6,
             'server_request_format' => 'CORS',
