@@ -7,8 +7,21 @@ jQuery(function() {
     
     // Postcodify 팝업 레이어 플러그인을 로딩한다.
     
-    var cdnPrefix = navigator.userAgent.match(/MSIE [56]\./) ? "http:" : "";
-    $.getScript(cdnPrefix + "//cdn.poesis.kr/post/popup.min.js");
+    var cdnProtocol = navigator.userAgent.match(/MSIE [56]\./) ? "http:" : "";
+    if (cdnProtocol === "" && !window.location.protocol.match(/^https?/)) cdnProtocol = "http:";
+    $.ajaxSetup({ cache : true });
+    $.getScript(cdnProtocol + "//cdn.poesis.kr/post/search.min.js");
+    $.ajaxSetup({ cache : false });
+    
+    // 메인 CDN에서 로딩할 수 없는 경우 백업 CDN에서 로딩한다.
+    
+    setTimeout(function() {
+        if (typeof $.fn.postcodify === "undefined" || typeof $.fn.postcodifyPopUp === "undefined") {
+            $.ajaxSetup({ cache : true });
+            $.getScript(cdnProtocol + "//d1p7wdleee1q2z.cloudfront.net/post/search.min.js");
+            $.ajaxSetup({ cache : false });
+        }
+    }, 2000);
     
     // 검색 단추에 이벤트를 부착한다.
     
