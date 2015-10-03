@@ -112,4 +112,8 @@
         <value xml:lang="ko"><![CDATA[우편번호 검색 모듈이 아직 완전히 로딩되지 않았습니다. 잠시만 기다려 주십시오.]]></value>
         <value xml:lang="en"><![CDATA[The postal code search module has not finished loading yet. Please wait a few moments.]]></value>
     </item>
+    <item name="krzip_incompatible_version">
+        <value xml:lang="ko"><![CDATA[Postcodify 우편번호 검색 모듈은 XE 1.7.4 이상 버전에서만 사용할 수 있습니다.]]></value>
+        <value xml:lang="en"><![CDATA[The postal code search module is only compatible with XE 1.7.4 and above.]]></value>
+    </item>
 </lang>

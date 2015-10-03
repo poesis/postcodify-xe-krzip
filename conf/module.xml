@@ -5,6 +5,7 @@
     <actions>
         <action name="dispKrzipAdminConfig" type="view" admin_index="true" menu_name="krzip" />
         <action name="procKrzipAdminInsertConfig" type="controller" ruleset="configKrzip" />
+        <action name="getKrzipCodeList" type="model" />
     </actions>
     <menus>
         <menu name="krzip" type="all">

@@ -11,7 +11,7 @@ class krzipModel extends krzip
     
     public function getKrzipCodeList()
     {
-        // no-op
+        return new Object(-1, 'krzip_incompatible_version');
     }
     
     public function getKrzipStandardFormat($values)
