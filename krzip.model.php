@@ -185,6 +185,10 @@ class krzipModel extends krzip
         $config = $this->getKrzipConfig();
         
         $values = $this->convertDataFormat($values);
+        if ($config->krzip_address_format === 'newkrzip' && strlen($values[4]) > 0)
+        {
+        	$values[4] = '(' . $values[4] . ')';
+        }
         foreach ($values as &$value)
         {
             $value = htmlspecialchars($value, ENT_COMPAT, 'UTF-8', false);
