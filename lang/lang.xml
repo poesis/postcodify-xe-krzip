@@ -65,8 +65,8 @@
         <value xml:lang="en"><![CDATA[Address format]]></value>
     </item>
     <item name="krzip_address_format_postcodify">
-        <value xml:lang="ko"><![CDATA[Postcodify 기본 형식]]></value>
-        <value xml:lang="en"><![CDATA[Postcodify default]]></value>
+        <value xml:lang="ko"><![CDATA[Postcodify 모듈 기본 형식]]></value>
+        <value xml:lang="en"><![CDATA[Postcodify module default]]></value>
     </item>
     <item name="krzip_address_format_newkrzip">
         <value xml:lang="ko"><![CDATA[새 krzip 모듈 형식]]></value>
