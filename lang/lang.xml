@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <lang>
     <item name="krzip">
-        <value xml:lang="ko"><![CDATA[Postcodify 새주소 우편번호 검색]]></value>
+        <value xml:lang="ko"><![CDATA[Postcodify 우편번호 검색]]></value>
         <value xml:lang="en"><![CDATA[Postcodify Korean Postal Code Search]]></value>
     </item>
     <item name="krzip_postal_code">

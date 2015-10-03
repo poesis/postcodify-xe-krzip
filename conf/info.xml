@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module version="0.2">
-    <title xml:lang="ko">Postcodify 새주소 우편번호 검색</title>
+    <title xml:lang="ko">Postcodify 우편번호 검색</title>
     <title xml:lang="en">Postcodify Korean Postal Code Search</title>
     <description xml:lang="ko">
         Postcodify 무료 API를 이용하여 도로명주소 및 지번주소의 우편번호를 검색합니다.

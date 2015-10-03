@@ -8,7 +8,7 @@
     </actions>
     <menus>
         <menu name="krzip" type="all">
-            <title xml:lang="ko">Postcodify 새주소 우편번호 검색</title>
+            <title xml:lang="ko">Postcodify 우편번호 검색</title>
             <title xml:lang="en">Postcodify Korean Postal Code Search</title>
         </menu>
     </menus>
