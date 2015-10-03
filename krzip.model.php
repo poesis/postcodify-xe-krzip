@@ -161,6 +161,11 @@ class krzipModel extends krzip
         $krzip_config->server_url = $config->krzip_server_url;
         $krzip_config->map_provider = $config->krzip_map_provider;
         $krzip_config->address_format = $config->krzip_address_format;
+        $krzip_config->display_postcode = $config->krzip_display_postcode;
+        $krzip_config->display_address = $config->krzip_display_address;
+        $krzip_config->display_details = $config->krzip_display_details;
+        $krzip_config->display_extra_info = $config->krzip_display_extra_info;
+        $krzip_config->display_jibeon_address = $config->krzip_display_jibeon_address;
         $krzip_config->postcode_format = $config->krzip_postcode_format;
         $krzip_config->server_request_format = $config->krzip_server_request_format;
         $krzip_config->require_exact_query = $config->krzip_require_exact_query;

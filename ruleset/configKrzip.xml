@@ -3,6 +3,11 @@
     <fields>
         <field name="krzip_server_url" required="true" />
         <field name="krzip_address_format" required="true" />
+        <field name="krzip_display_postcode" />
+        <field name="krzip_display_address" />
+        <field name="krzip_display_details" />
+        <field name="krzip_display_extra_info" />
+        <field name="krzip_display_jibeon_address" />
         <field name="krzip_postcode_format" required="true" />
         <field name="krzip_server_request_format" required="true" />
         <field name="krzip_require_exact_query" required="true" />

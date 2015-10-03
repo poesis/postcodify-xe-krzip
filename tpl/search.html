@@ -67,17 +67,29 @@
         
         <!--@else-->
         
+        <!--@if($krzip->display_address === 'Y')-->
         <input type="text" class="postcodify postcodify_address" id="postcodify_{$krzip->instance_id}_address" name="{$krzip->column_name}[]" value="{$krzip->values[1]}" data-origin-value="{$krzip->values[1]}" />
         <label class="postcodify postcodify_address" for="postcodify_{$krzip->instance_id}_address">{$lang->krzip_road_address}</label>
         <br />
+        <!--@end-->
         
+        <!--@if($krzip->display_details === 'Y')-->
         <input type="text" class="postcodify postcodify_details" id="postcodify_{$krzip->instance_id}_details" name="{$krzip->column_name}[]" value="{$krzip->values[2]}" data-origin-value="{$krzip->values[2]}" />
         <label class="postcodify postcodify_details" for="postcodify_{$krzip->instance_id}_details">{$lang->krzip_details}</label>
         <br />
+        <!--@end-->
         
+        <!--@if($krzip->display_extra_info === 'Y')-->
         <input type="text" class="postcodify postcodify_extra_info" id="postcodify_{$krzip->instance_id}_extra_info" name="{$krzip->column_name}[]" value="{$krzip->values[3]}" data-origin-value="{$krzip->values[3]}" />
         <label class="postcodify postcodify_extra_info" for="postcodify_{$krzip->instance_id}_extra_info">{$lang->krzip_extra_info}</label>
         <br />
+        <!--@end-->
+        
+        <!--@if($krzip->display_jibeon_address === 'Y')-->
+        <input type="text" class="postcodify postcodify_jibeon_address" id="postcodify_{$krzip->instance_id}_jibeon_address" name="{$krzip->column_name}[]" value="{$krzip->values[4]}" data-origin-value="{$krzip->values[4]}" />
+        <label class="postcodify postcodify_jibeon_address" for="postcodify_{$krzip->instance_id}_jibeon_address">{$lang->krzip_jibeon_address}</label>
+        <br />
+        <!--@end-->
         
         <!--@end-->
         

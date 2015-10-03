@@ -10,6 +10,11 @@ class krzip extends ModuleObject
             'server_url' => 'https://api.poesis.kr/post/search.php',
             'map_provider' => 'naver',
             'address_format' => 'postcodify',
+            'display_postcode' => 'Y',
+            'display_address' => 'Y',
+            'display_details' => 'Y',
+            'display_extra_info' => 'Y',
+            'display_jibeon_address' => 'N',
             'postcode_format' => 5,
             'server_request_format' => 'CORS',
             'require_exact_query' => 'N',
@@ -30,7 +35,7 @@ class krzip extends ModuleObject
         {
             $args->krzip_server_url = $defaults['server_url'];
         }
-    	
+        
         return $config;
     }
     
